@@ -1,17 +1,16 @@
+import { Container } from "@mui/material";
 import React from "react";
+import BannerCard from "../components/BannerCard";
 
 import Navbar from "../components/Navbar";
 
 const Customer = () => {
   return (
     <div>
-      <div>
-        <div>
-          <Navbar />
-        </div>
-        <br />
-        <div>Customer....</div>
-      </div>
+      <Container>
+        <Navbar />
+        <BannerCard />
+      </Container>
     </div>
   );
 };
