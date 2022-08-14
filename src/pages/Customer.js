@@ -1,17 +1,22 @@
+import { Container } from "@mui/material";
 import React from "react";
+import BannerCard from "../components/BannerCard";
+import FoodCard from "../components/FoodCard";
 
 import Navbar from "../components/Navbar";
 
 const Customer = () => {
   return (
     <div>
-      <div>
-        <div>
-          <Navbar />
-        </div>
+      <Container>
+        <Navbar />
         <br />
-        <div>Customer....</div>
-      </div>
+        <br />
+        <br />
+        <BannerCard />
+        <br />
+        <FoodCard />
+      </Container>
     </div>
   );
 };
