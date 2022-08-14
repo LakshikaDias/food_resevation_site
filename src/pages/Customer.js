@@ -10,7 +10,11 @@ const Customer = () => {
     <div>
       <Container>
         <Navbar />
+        <br />
+        <br />
+        <br />
         <BannerCard />
+        <br />
         <FoodCard />
       </Container>
     </div>
