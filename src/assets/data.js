@@ -1,10 +1,25 @@
+import Burger from "../assets/imagesList/burger.jpg";
+import checkenHawaiinFriedRice from "../assets/imagesList/checkenHawaiinFriedRice.jpg";
+import CreamySpinachTomatoPasta from "../assets/imagesList/CreamySpinachTomatoPasta.jpg";
+import FriedChicken from "../assets/imagesList/FriedChicken.png";
+import soySauceNoodles from "../assets/imagesList/soySauceNoodles.jpg";
+import spicyChickenPizza from "../assets/imagesList/spicyChickenPizza.jpg";
+
 const foods = [
-  { imag: "image1", name: "name1", description: "description1" },
-  { imag: "image2", name: "name2", description: "description2" },
-  { imag: "image3", name: "name3", description: "description3" },
-  { imag: "image4", name: "name4", description: "description4" },
-  { imag: "image5", name: "name5", description: "description5" },
-  { imag: "image6", name: "name6", description: "description6" },
+  { imag: { Burger }, name: "name1", description: "description1" },
+  {
+    imag: { checkenHawaiinFriedRice },
+    name: "name2",
+    description: "description2",
+  },
+  {
+    imag: { CreamySpinachTomatoPasta },
+    name: "name3",
+    description: "description3",
+  },
+  { imag: { FriedChicken }, name: "name4", description: "description4" },
+  { imag: { soySauceNoodles }, name: "name5", description: "description5" },
+  { imag: { spicyChickenPizza }, name: "name6", description: "description6" },
 ];
 
 export default foods;

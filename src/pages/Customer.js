@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import React from "react";
 import BannerCard from "../components/BannerCard";
+import FoodCard from "../components/FoodCard";
 
 import Navbar from "../components/Navbar";
 
@@ -10,6 +11,7 @@ const Customer = () => {
       <Container>
         <Navbar />
         <BannerCard />
+        <FoodCard />
       </Container>
     </div>
   );
