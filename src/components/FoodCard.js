@@ -10,14 +10,14 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import foods from "../assets/data";
 
-const FoodCard = () => {
+const FoodCard = (foodList) => {
+  // console.log("helooo", foodList);
   return (
     <div>
       <Container>
         <Grid container spacing={2}>
-          {foods.map((food, id) => {
+          {foodList.foodList.map((food, id) => {
             return (
               <Grid item xs={12} sm={6} md={4}>
                 <Card key={id} sx={{ maxWith: 40 }}>
@@ -25,7 +25,7 @@ const FoodCard = () => {
                   <CardMedia
                     component="img"
                     height="194"
-                    image={food.imag}
+                    image={food.image}
                     alt="resturant_image"
                   />
                   <CardContent>

@@ -1,11 +1,14 @@
 import { Container } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import BannerCard from "../components/BannerCard";
 import FoodCard from "../components/FoodCard";
 
 import Navbar from "../components/Navbar";
 
 const Customer = () => {
+  const foodObjectArray = useSelector((state) => state.food);
+  // console.log("food", foodObjectArray);
   return (
     <div>
       <Container>
@@ -15,7 +18,12 @@ const Customer = () => {
         <br />
         <BannerCard />
         <br />
-        <FoodCard />
+        <FoodCard foodList={foodObjectArray} />
+        {/* <div>
+          {food.map((f) => {
+            return f.name;
+          })}
+        </div> */}
       </Container>
     </div>
   );
