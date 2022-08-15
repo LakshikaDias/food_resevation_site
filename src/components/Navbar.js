@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const pages = ["Customer", "Cook", "Manager"];
@@ -54,7 +55,9 @@ const Navbar = () => {
               {pages.map((page, id) => {
                 return (
                   <MenuItem key={id} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Link to={page}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </Link>
                   </MenuItem>
                 );
               })}
@@ -63,7 +66,9 @@ const Navbar = () => {
               {pages.map((page, id) => {
                 return (
                   <Button key={id} sx={{ color: "white", display: "block" }}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Link to={page}>
+                      <Typography textAlign="center">{page}</Typography>
+                    </Link>
                   </Button>
                 );
               })}
