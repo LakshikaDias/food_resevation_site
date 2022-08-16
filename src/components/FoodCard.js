@@ -11,22 +11,22 @@ import {
 import { Container } from "@mui/system";
 import React from "react";
 
-const FoodCard = (foodList) => {
+const FoodCard = (props) => {
   // console.log("helooo", foodList);
   return (
     <div>
       <Container>
         <Grid container spacing={2}>
-          {foodList.foodList.map((food, id) => {
+          {props.foodList.map((food, id) => {
             return (
               <Grid item xs={12} sm={6} md={4}>
                 <Card key={id} sx={{ maxWith: 40 }}>
-                  <CardHeader title={food.name} />
+                  <CardHeader title={food.title} />
                   <CardMedia
                     component="img"
                     height="194"
                     image={food.image}
-                    alt="resturant_image"
+                    alt={food.title}
                   />
                   <CardContent>
                     <Typography>{food.description}</Typography>
