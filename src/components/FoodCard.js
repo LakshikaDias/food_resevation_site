@@ -1,4 +1,7 @@
+import React from "react";
+
 import {
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -9,10 +12,16 @@ import {
   Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShareIcon from "@mui/icons-material/Share";
+import { red } from "@mui/material/colors";
 
 const FoodCard = (props) => {
   // console.log("helooo", foodList);
+  console.log("page", props.page);
+
   return (
     <div>
       <Container>
@@ -32,11 +41,33 @@ const FoodCard = (props) => {
                     <Typography>{food.description}</Typography>
                   </CardContent>
                   <CardActions disableSpacing>
-                    {/* <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="share"></IconButton> */}
-                    {/* <ExpandMore aria-label="show more"></ExpandMore> */}
+                    {props.page != "customer" ? (
+                      <>
+                        <IconButton
+                          aria-label="delete"
+                          size="large"
+                          sx={{ color: red[500] }}
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                        <IconButton
+                          aria-label="edit"
+                          size="large"
+                          color="success"
+                        >
+                          <EditIcon />
+                        </IconButton>
+                      </>
+                    ) : (
+                      <>
+                        <IconButton size="large" sx={{ color: red[500] }}>
+                          <FavoriteBorderIcon />
+                        </IconButton>
+                        <IconButton size="large" color="primary">
+                          <ShareIcon />
+                        </IconButton>
+                      </>
+                    )}
                   </CardActions>
                 </Card>
               </Grid>

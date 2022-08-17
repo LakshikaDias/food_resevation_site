@@ -18,7 +18,7 @@ const Customer = () => {
         <br />
         <BannerCard />
         <br />
-        <FoodCard foodList={foodObjectArray} />
+        <FoodCard foodList={foodObjectArray} page="customer" />
       </Container>
     </div>
   );
