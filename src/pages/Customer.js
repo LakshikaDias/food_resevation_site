@@ -7,7 +7,7 @@ import FoodCard from "../components/FoodCard";
 import Navbar from "../components/Navbar";
 
 const Customer = () => {
-  const foodObjectArray = useSelector((state) => state.food);
+  const foodObjectArray = useSelector((state) => state.food.food);
   // console.log("food", foodObjectArray);
   return (
     <div>
@@ -18,12 +18,7 @@ const Customer = () => {
         <br />
         <BannerCard />
         <br />
-        <FoodCard foodList={foodObjectArray} />
-        {/* <div>
-          {food.map((f) => {
-            return f.name;
-          })}
-        </div> */}
+        <FoodCard foodList={foodObjectArray} page="customer" />
       </Container>
     </div>
   );
