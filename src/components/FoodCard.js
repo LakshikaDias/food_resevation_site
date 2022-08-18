@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { useDispatch } from "react-redux/es/exports";
+
+import { deleteFoodById } from "../slices/foodSlice";
 
 import {
   Button,
@@ -17,10 +21,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import { red } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 
 const FoodCard = (props) => {
-  // console.log("helooo", foodList);
-  console.log("page", props.page);
+  const [dele, setDele] = useState(false);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -28,8 +33,8 @@ const FoodCard = (props) => {
         <Grid container spacing={2}>
           {props.foodList.map((food, id) => {
             return (
-              <Grid item xs={12} sm={6} md={4}>
-                <Card key={id} sx={{ maxWith: 40 }}>
+              <Grid key={id} item xs={12} sm={6} md={4}>
+                <Card sx={{ maxWith: 40 }}>
                   <CardHeader title={food.title} />
                   <CardMedia
                     component="img"
@@ -47,6 +52,12 @@ const FoodCard = (props) => {
                           aria-label="delete"
                           size="large"
                           sx={{ color: red[500] }}
+                          onClick={() => {
+                            setDele(true);
+                            if (dele == true) {
+                              dispatch(deleteFoodById(food.title));
+                            }
+                          }}
                         >
                           <DeleteIcon />
                         </IconButton>
@@ -68,6 +79,9 @@ const FoodCard = (props) => {
                         </IconButton>
                       </>
                     )}
+                    <Link to={`/foods/${food.title}`}>
+                      <Button>See More</Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
