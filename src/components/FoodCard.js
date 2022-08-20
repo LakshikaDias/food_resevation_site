@@ -17,7 +17,6 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import { red } from "@mui/material/colors";
@@ -25,6 +24,7 @@ import { Link } from "react-router-dom";
 
 const FoodCard = (props) => {
   const [dele, setDele] = useState(false);
+
   const dispatch = useDispatch();
 
   return (
@@ -60,13 +60,6 @@ const FoodCard = (props) => {
                           }}
                         >
                           <DeleteIcon />
-                        </IconButton>
-                        <IconButton
-                          aria-label="edit"
-                          size="large"
-                          color="success"
-                        >
-                          <EditIcon />
                         </IconButton>
                       </>
                     ) : (
