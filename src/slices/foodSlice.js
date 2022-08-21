@@ -69,9 +69,18 @@ export const foodSlice = createSlice({
     },
 
     editFoodItem: (state, action) => {
-      state.food.filter((food) => {
-        // if(foo)
+      // console.log("hiii", action.payload.id);
+      // console.log("hiii", action.payload);
+      const editArray = state.food.map((food) => {
+        if (food.id == action.payload.id) {
+          return action.payload;
+        } else {
+          return food;
+        }
       });
+
+      // console.log("viranga", editArray);
+      state.food = editArray;
     },
   },
 });

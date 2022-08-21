@@ -2,6 +2,7 @@ import React from "react";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { editFoodItem } from "../slices/foodSlice";
 
@@ -10,11 +11,16 @@ import { Box, Button, Container, TextField } from "@mui/material";
 const EditFoodForm = (props) => {
   console.log("editfoodform", props);
 
+  const navigate = useNavigate();
+
   const [editFood, setEditFood] = useState({
-    image: "",
-    title: "",
-    description: "",
+    id: props.foodData.id,
+    image: props.foodData.image,
+    title: props.foodData.title,
+    description: props.foodData.description,
   });
+
+  console.log("bihann", props.foodData.id);
 
   const handleChange = (e) => {
     setEditFood({ ...editFood, [e.target.name]: e.target.value });
@@ -23,6 +29,7 @@ const EditFoodForm = (props) => {
 
   const handleSubmit = () => {
     distpatch(editFoodItem(editFood));
+    navigate("/cook");
   };
 
   return (
@@ -38,24 +45,27 @@ const EditFoodForm = (props) => {
           }}
         >
           <TextField
+            placeholder={props.foodData.image}
             name="image"
-            value={props.foodData.image}
+            value={editFood.image}
             onChange={handleChange}
           />
           <br />
           <br />
           <TextField
+            placeholder={props.foodData.title}
             name="title"
             type="text"
-            value={props.foodData.title}
+            value={editFood.title}
             onChange={handleChange}
           />
           <br />
           <br />
           <TextField
+            placeholder={props.foodData.description}
             name="description"
             type="text"
-            value={props.foodData.description}
+            value={editFood.description}
             onChange={handleChange}
           />
           <br />

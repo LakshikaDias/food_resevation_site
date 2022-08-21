@@ -8,6 +8,7 @@ import { Box, Button, Container, TextField } from "@mui/material";
 
 const AddFoodForm = () => {
   const [addFood, setAddFood] = useState({
+    id: Math.floor(Math.random() * 1000),
     image: "",
     title: "",
     description: "",
@@ -21,7 +22,7 @@ const AddFoodForm = () => {
     distpatch(addNewFood(addFood));
     setAddFood({ image: " ", title: " ", description: " " });
   };
-  // console.log("addFood", addFood);
+  console.log("addFood", addFood.id);
   return (
     <div>
       <Container>

@@ -23,6 +23,7 @@ const FoodDetail = () => {
   const [edit, setEdit] = useState(false);
 
   const [editFood, setEditFood] = useState({
+    id: "",
     image: "",
     title: "",
     description: "",
@@ -31,6 +32,7 @@ const FoodDetail = () => {
   const handleEdit = () => {
     setEdit(true);
     setEditFood({
+      id: selectedFood.id,
       image: selectedFood.image,
       title: selectedFood.title,
       description: selectedFood.description,
@@ -45,6 +47,7 @@ const FoodDetail = () => {
           <img src={selectedFood.image} />
           <div>{selectedFood.title}</div>
           <div>{selectedFood.description}</div>
+          {/* <div>{selectedFood.id}</div> */}
           <Button onClick={handleEdit}>Edit food </Button>
         </Container>
       ) : (
