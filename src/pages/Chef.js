@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 
 import { Container } from "@mui/material";
 
-const Cook = () => {
+const Chef = () => {
   const foodObjectArray = useSelector((state) => state.food.food);
   return (
     <div>
@@ -24,4 +24,4 @@ const Cook = () => {
   );
 };
 
-export default Cook;
+export default Chef;
