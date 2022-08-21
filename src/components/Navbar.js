@@ -15,7 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const pages = ["Customer", "Cook", "Manager"];
+  const pages = ["Customer", "Chef", "Manager"];
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 

@@ -82,8 +82,15 @@ export const foodSlice = createSlice({
       // console.log("viranga", editArray);
       state.food = editArray;
     },
+
+    deleteAllfoods: (state, action) => {
+      if (action.payload == true) {
+        state.food = [];
+      }
+    },
   },
 });
 
-export const { addNewFood, deleteFoodById, editFoodItem } = foodSlice.actions;
+export const { addNewFood, deleteFoodById, editFoodItem, deleteAllfoods } =
+  foodSlice.actions;
 export default foodSlice.reducer;

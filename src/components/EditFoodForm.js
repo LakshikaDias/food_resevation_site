@@ -29,7 +29,7 @@ const EditFoodForm = (props) => {
 
   const handleSubmit = () => {
     distpatch(editFoodItem(editFood));
-    navigate("/cook");
+    navigate("/chef");
   };
 
   return (
