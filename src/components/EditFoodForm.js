@@ -2,27 +2,36 @@ import React from "react";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addNewFood } from "../slices/foodSlice";
+import { useNavigate } from "react-router-dom";
+
+import { editFoodItem } from "../slices/foodSlice";
 
 import { Box, Button, Container, TextField } from "@mui/material";
 
-const AddFoodForm = () => {
-  const [addFood, setAddFood] = useState({
-    id: Math.floor(Math.random() * 1000),
-    image: "",
-    title: "",
-    description: "",
+const EditFoodForm = (props) => {
+  console.log("editfoodform", props);
+
+  const navigate = useNavigate();
+
+  const [editFood, setEditFood] = useState({
+    id: props.foodData.id,
+    image: props.foodData.image,
+    title: props.foodData.title,
+    description: props.foodData.description,
   });
+
+  console.log("bihann", props.foodData.id);
+
   const handleChange = (e) => {
-    setAddFood({ ...addFood, [e.target.name]: e.target.value });
+    setEditFood({ ...editFood, [e.target.name]: e.target.value });
   };
   const distpatch = useDispatch();
 
   const handleSubmit = () => {
-    distpatch(addNewFood(addFood));
-    setAddFood({ image: " ", title: " ", description: " " });
+    distpatch(editFoodItem(editFood));
+    navigate("/cook");
   };
-  console.log("addFood", addFood.id);
+
   return (
     <div>
       <Container>
@@ -36,33 +45,33 @@ const AddFoodForm = () => {
           }}
         >
           <TextField
-            label="Image"
+            placeholder={props.foodData.image}
             name="image"
-            value={addFood.image}
+            value={editFood.image}
             onChange={handleChange}
           />
           <br />
           <br />
           <TextField
-            label="Title"
+            placeholder={props.foodData.title}
             name="title"
             type="text"
-            value={addFood.title}
+            value={editFood.title}
             onChange={handleChange}
           />
           <br />
           <br />
           <TextField
-            label="Description"
+            placeholder={props.foodData.description}
             name="description"
             type="text"
-            value={addFood.description}
+            value={editFood.description}
             onChange={handleChange}
           />
           <br />
           <br />
           <Button variant="contained" onClick={handleSubmit}>
-            Add new Foods
+            Save edit Foods
           </Button>
         </Box>
       </Container>
@@ -70,4 +79,4 @@ const AddFoodForm = () => {
   );
 };
 
-export default AddFoodForm;
+export default EditFoodForm;
