@@ -9,8 +9,6 @@ import { editFoodItem } from "../slices/foodSlice";
 import { Box, Button, Container, TextField } from "@mui/material";
 
 const EditFoodForm = (props) => {
-  console.log("editfoodform", props);
-
   const navigate = useNavigate();
 
   const [editFood, setEditFood] = useState({
@@ -19,8 +17,6 @@ const EditFoodForm = (props) => {
     title: props.foodData.title,
     description: props.foodData.description,
   });
-
-  console.log("bihann", props.foodData.id);
 
   const handleChange = (e) => {
     setEditFood({ ...editFood, [e.target.name]: e.target.value });

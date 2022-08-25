@@ -15,12 +15,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const pages = ["Customer", "Chef", "Manager"];
+  const pages = [
+    { page: "Customer", pageurl: "/Customer" },
+    { page: "Chef", pageurl: "/Chef" },
+    { page: "Manager", pageurl: "/Manager" },
+  ];
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
-    // console.log(event.currentTarget);
     setAnchorElNav(event.currentTarget);
   };
 
@@ -33,6 +36,7 @@ const Navbar = () => {
       <AppBar>
         <Container>
           <Toolbar disableGutters>
+            {/* Start menu Button */}
             <IconButton
               size="large"
               color="inherit"
@@ -44,6 +48,7 @@ const Navbar = () => {
                 }}
               />
             </IconButton>
+
             <Menu
               anchorEl={anchorElNav}
               open={Boolean(anchorElNav)}
@@ -52,22 +57,24 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page, id) => {
+              {pages.map((pages, id) => {
                 return (
                   <MenuItem key={id} onClick={handleCloseNavMenu}>
-                    <Link to={page}>
-                      <Typography textAlign="center">{page}</Typography>
+                    <Link to={pages.pageurl}>
+                      <Typography textAlign="center">{pages.page}</Typography>
                     </Link>
                   </MenuItem>
                 );
               })}
             </Menu>
+            {/* End menu button */}
+
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page, id) => {
+              {pages.map((pages, id) => {
                 return (
                   <Button key={id} sx={{ color: "white", display: "block" }}>
-                    <Link to={page}>
-                      <Typography textAlign="center">{page}</Typography>
+                    <Link to={pages.pageurl}>
+                      <Typography textAlign="center">{pages.page}</Typography>
                     </Link>
                   </Button>
                 );

@@ -22,7 +22,7 @@ const AddFoodForm = () => {
     distpatch(addNewFood(addFood));
     setAddFood({ image: " ", title: " ", description: " " });
   };
-  console.log("addFood", addFood.id);
+
   return (
     <div>
       <Container>

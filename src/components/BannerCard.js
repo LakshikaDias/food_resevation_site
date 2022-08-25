@@ -1,17 +1,15 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-// import images from "../assets/images";
-import restaurantImage from "../assets/imagesList/restaurantImage.jpg";
 
-const BannerCard = () => {
+const BannerCard = (props) => {
   return (
     <Container>
       <Card sx={{ maxWidth: 1200 }}>
         <CardMedia
           component="img"
           height="500"
-          image={restaurantImage}
+          image={props.img}
           alt="resturant_image"
         />
         <CardContent>
