@@ -53,12 +53,9 @@ export const foodSlice = createSlice({
   reducers: {
     // Add new food item
     addNewFood: (state, action) => {
-      // console.log("foodslice", action.payload);
       state.food.push(action.payload);
     },
     deleteFoodById: (state, action) => {
-      // console.log("foodSlisedelete", action.payload);
-
       const deleteFoodArray = state.food.filter((food) => {
         if (food.title != action.payload) {
           return food;
@@ -69,8 +66,6 @@ export const foodSlice = createSlice({
     },
 
     editFoodItem: (state, action) => {
-      // console.log("hiii", action.payload.id);
-      // console.log("hiii", action.payload);
       const editArray = state.food.map((food) => {
         if (food.id == action.payload.id) {
           return action.payload;
@@ -79,7 +74,6 @@ export const foodSlice = createSlice({
         }
       });
 
-      // console.log("viranga", editArray);
       state.food = editArray;
     },
 
