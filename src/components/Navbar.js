@@ -16,9 +16,9 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const pages = [
-    { page: "Customer", pageurl: "/Customer" },
-    { page: "Chef", pageurl: "/Chef" },
-    { page: "Manager", pageurl: "/Manager" },
+    { page: "Customer", pageurl: "/" },
+    { page: "Chef", pageurl: "/chef" },
+    { page: "Manager", pageurl: "/manager" },
   ];
 
   const [anchorElNav, setAnchorElNav] = useState(null);

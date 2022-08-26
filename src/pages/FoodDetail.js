@@ -10,7 +10,7 @@ import { Container } from "@mui/system";
 import { Button } from "@mui/material";
 
 const FoodDetail = () => {
-  const { id } = useParams();
+  const { id, user } = useParams();
 
   const foodObjectArray = useSelector((state) => {
     return state.food.food;
@@ -47,8 +47,12 @@ const FoodDetail = () => {
           <img src={selectedFood.image} />
           <div>{selectedFood.title}</div>
           <div>{selectedFood.description}</div>
-          {/* <div>{selectedFood.id}</div> */}
-          <Button onClick={handleEdit}>Edit food </Button>
+
+          {user != "customer" ? (
+            <Button onClick={handleEdit}>Edit food </Button>
+          ) : (
+            <></>
+          )}
         </Container>
       ) : (
         <EditFoodForm foodData={editFood} />
