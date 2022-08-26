@@ -72,7 +72,7 @@ const FoodCard = (props) => {
                         </IconButton>
                       </>
                     )}
-                    <Link to={`/foods/${food.title}`}>
+                    <Link to={`/${props.page}/foods/${food.title}`}>
                       <Button>See More</Button>
                     </Link>
                   </CardActions>

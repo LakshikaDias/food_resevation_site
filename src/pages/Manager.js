@@ -7,7 +7,18 @@ import FoodCard from "../components/FoodCard";
 
 import { deleteAllfoods } from "../slices/foodSlice";
 
-import { Button, Container } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Typography,
+} from "@mui/material";
 
 const Manager = () => {
   const [deleteAll, setDeleteAll] = useState(false);
@@ -29,26 +40,59 @@ const Manager = () => {
     <div>
       <Container>
         <Navbar />
-        <br />
-        <br />
-        <br />
-        <BannerCard img="https://upserve.com/media/sites/2/restaurant-manager-and-chef-looking-at-licenses.jpg" />
 
-        <br />
-        <br />
-        <div>
-          {orderObjectArray.map((order) => {
-            return (
-              <div>
-                <div>{order.orderId}</div>
-                <div>{order.orderStatus}</div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Card: Banner card */}
+        <Grid container marginTop={9} marginBottom={10}>
+          <BannerCard img="https://upserve.com/media/sites/2/restaurant-manager-and-chef-looking-at-licenses.jpg" />
+        </Grid>
 
-        <Button onClick={handleAllDelete}>Delete All items</Button>
-        <FoodCard foodList={foodObjectArray} page="cook" />
+        {/* Table: Order Details Table */}
+        <Grid
+          container
+          padding={5}
+          sx={{ border: 1, borderColor: "primary.main", borderRadius: "16px" }}
+        >
+          <Grid container justifyContent="center" marginBottom={5}>
+            <Typography variant="h4"> Order Details Board</Typography>
+          </Grid>
+
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Order Id</TableCell>
+                  <TableCell>Food Type</TableCell>
+                  <TableCell>Date</TableCell>
+                  <TableCell>Order Status</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {orderObjectArray.map((order, id) => {
+                  return (
+                    <>
+                      <TableRow key={id}>
+                        <TableCell>{order.orderId}</TableCell>
+                        <TableCell>{order.foodType}</TableCell>
+                        <TableCell>{order.date}</TableCell>
+                        <TableCell>{order.orderStatus}</TableCell>
+                      </TableRow>
+                    </>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
+        {/* Button: Delete All Button */}
+        <Grid container justifyContent="center" padding={10}>
+          <Button variant="contained" onClick={handleAllDelete}>
+            <Typography padding={2}>Delete All Displayed Food Cards</Typography>
+          </Button>
+        </Grid>
+
+        {/* Card: Food Item cards */}
+        <FoodCard foodList={foodObjectArray} page="manager" />
       </Container>
     </div>
   );

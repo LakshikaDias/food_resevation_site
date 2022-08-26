@@ -19,13 +19,12 @@ import {
 const Customer = () => {
   const foodObjectArray = useSelector((state) => state.food.food);
 
-  const foodTypes = ["type1", "type2", "type3"];
   const sizeTypes = ["small", "large", "medium"];
   const amount = ["1", "2", "3", "4", "5", "6"];
 
   const [order, setOrder] = useState({
     orderId: Math.floor(Math.random() * 1000),
-    foodType: "type1",
+    foodType: "title1",
     size: "small",
     amount: "1",
     date: "date here",
@@ -70,10 +69,10 @@ const Customer = () => {
             onChange={handleChange}
             helperText="Please select your food type here"
           >
-            {foodTypes.map((option, id) => {
+            {foodObjectArray.map((option, id) => {
               return (
-                <MenuItem key={id} value={option}>
-                  <Typography textAlign="center">{option}</Typography>
+                <MenuItem key={id} value={option.title}>
+                  <Typography textAlign="center">{option.title}</Typography>
                 </MenuItem>
               );
             })}

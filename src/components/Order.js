@@ -22,7 +22,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const Order = (props) => {
   const [orderStatus, setOrderStatus] = useState("New order");
 
-  const statusTypes = ["New order", "Cooking", "Done"];
+  const statusTypes = ["New order", "Cooking", "Done", "Delivered"];
 
   const dispatch = useDispatch();
 
