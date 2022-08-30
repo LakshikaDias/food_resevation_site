@@ -32,9 +32,11 @@ const Chef = () => {
           justifyContent="center"
           marginTop={10}
           marginBottom={10}
+          sx={{ border: 1, borderColor: "primary.main", borderRadius: 5 }}
+          padding={10}
         >
-          <Grid>
-            <Typography>Orders......</Typography>
+          <Grid container justifyContent="center" paddingBottom={5}>
+            <Typography fontSize={40}>Orders......</Typography>
           </Grid>
 
           {orderObjectArray.map((order, id) => {

@@ -27,7 +27,7 @@ const Order = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <ListItemAvatar>
@@ -79,7 +79,7 @@ const Order = (props) => {
           </TextField>
         </AccordionDetails>
       </Accordion>
-    </div>
+    </>
   );
 };
 

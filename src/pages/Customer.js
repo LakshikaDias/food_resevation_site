@@ -65,8 +65,8 @@ const Customer = () => {
           marginBottom={10}
           padding={10}
         >
-          <Grid container justifyContent="center" padding={5}>
-            <Typography>Make Order</Typography>
+          <Grid container justifyContent="center" paddingBottom={5}>
+            <Typography fontSize={40}>Make Order</Typography>
           </Grid>
 
           <Grid container>
@@ -152,6 +152,7 @@ const Customer = () => {
                   name="date"
                   value={order.date}
                   onChange={handleChange}
+                  helperText="Please select your delivery date"
                 />
               </Grid>
             </Grid>
