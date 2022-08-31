@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Order from "../components/Order";
 
 import { Container, Grid, Typography } from "@mui/material";
+import Footer from "../components/Footer";
 
 const Chef = () => {
   const foodObjectArray = useSelector((state) => state.food.food);
@@ -62,6 +63,7 @@ const Chef = () => {
           <FoodCard foodList={foodObjectArray} page="chef" />
         </Grid>
       </Container>
+      <Footer />
     </div>
   );
 };

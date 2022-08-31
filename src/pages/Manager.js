@@ -19,6 +19,7 @@ import {
   TableBody,
   Typography,
 } from "@mui/material";
+import Footer from "../components/Footer";
 
 const Manager = () => {
   const [deleteAll, setDeleteAll] = useState(false);
@@ -94,6 +95,7 @@ const Manager = () => {
         {/* Card: Food Item cards */}
         <FoodCard foodList={foodObjectArray} page="manager" />
       </Container>
+      <Footer />
     </div>
   );
 };

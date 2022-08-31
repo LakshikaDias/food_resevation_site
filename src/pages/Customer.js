@@ -15,6 +15,7 @@ import {
   Typography,
   Grid,
 } from "@mui/material";
+import Footer from "../components/Footer";
 
 const Customer = () => {
   const foodObjectArray = useSelector((state) => state.food.food);
@@ -166,6 +167,7 @@ const Customer = () => {
 
         <FoodCard foodList={foodObjectArray} page="customer" />
       </Container>
+      <Footer />
     </div>
   );
 };
