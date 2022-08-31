@@ -8,6 +8,7 @@ import EditFoodForm from "../components/EditFoodForm";
 
 import { Container } from "@mui/system";
 import { Button } from "@mui/material";
+import Footer from "../components/Footer";
 
 const FoodDetail = () => {
   const { id, user } = useParams();
@@ -42,18 +43,21 @@ const FoodDetail = () => {
   return (
     <>
       {edit == false ? (
-        <Container>
-          <Navbar />
-          <img src={selectedFood.image} />
-          <div>{selectedFood.title}</div>
-          <div>{selectedFood.description}</div>
+        <>
+          <Container>
+            <Navbar />
+            <img src={selectedFood.image} />
+            <div>{selectedFood.title}</div>
+            <div>{selectedFood.description}</div>
 
-          {user != "customer" ? (
-            <Button onClick={handleEdit}>Edit food </Button>
-          ) : (
-            <></>
-          )}
-        </Container>
+            {user != "customer" ? (
+              <Button onClick={handleEdit}>Edit food </Button>
+            ) : (
+              <></>
+            )}
+          </Container>
+          <Footer />
+        </>
       ) : (
         <EditFoodForm foodData={editFood} />
       )}
