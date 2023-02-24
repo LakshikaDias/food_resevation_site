@@ -74,4 +74,9 @@ Register Page
 ![RegisterPage](https://user-images.githubusercontent.com/57390844/221091608-fd061ed9-04af-4880-bfea-f3a6b12dde63.png)
 
 Login Page
+
 ![LoginPage](https://user-images.githubusercontent.com/57390844/221091801-3e09737d-b75c-4a07-b787-b3782f4b2592.png)
+
+Home Page
+
+![HomePage](https://user-images.githubusercontent.com/57390844/221091931-6652194d-b8db-4840-8ebe-7d628a0dc9d0.png)
